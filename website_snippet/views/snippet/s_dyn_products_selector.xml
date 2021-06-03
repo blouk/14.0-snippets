@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="s_dynamic_snippet_products_selector" name="Dynamic Products Selector">
+        <div class="s_dynamic_snippet_products_selector pt24 pb24">
+            <div class="o_not_editable message_no_product">
+                <div class="css_non_editable_mode_hidden">
+                    <div class="alert alert-info rounded-0 fade show">
+                        <small>Here your product.<br/></small>
+                    </div>
+                </div>
+            </div>
+            <div class="content css_editable_mode_hidden"/>
+        </div>
+    </template>
+
+    <template id="s_dynamic_snippet_products_selector_options_template">
+        <div t-attf-data-js="#{snippet_name}" t-attf-data-selector="#{snippet_selector}" data-no-preview="false">
+            <t t-raw="0"/>
+        </div>
+
+    </template>
+
+    <template id="s_dynamic_snippet_products_selector_options" inherit_id="website.snippet_options">
+        <xpath expr="." position="inside">
+            <t t-set="selector" t-value="'.s_dynamic_snippet_products_selector'"/>
+            <div/>
+            <div data-js="DynamicSnippetProductSelectorOptions" t-att-data-selector="selector" data-drop-near="p, h1, h2, h3, blockquote">
+                <we-select string="Products" data-name="products_opt" data-attribute-name="product" data-no-preview="false"/>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="website_snippet.s_dyn_products_selector">
+        <div class="card">
+            <img class="card-img-top" t-attf-src="/web/image/product.template/#{product.id}/image_256" t-attf-alt="#{product.name}"/>
+            <div class="card-body text-center">
+                <h5 class="card-title"><t t-esc="product.name"/></h5>
+                <a t-attf-href="/shop/product/#{product.id}" class="btn btn-primary ">View</a>
+            </div>
+        </div>
+    </t>
+</templates>
